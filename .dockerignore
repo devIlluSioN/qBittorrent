@@ -1,0 +1,16 @@
+.git
+.gitignore
+*.md
+*.asc
+build/
+dist/
+test/
+.github/
+*.swp
+*.swo
+*~
+.DS_Store
+downloads/
+config/
+data/
+

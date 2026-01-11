@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  qbittorrent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qbittorrent-test
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./downloads:/home/qbittorrent/Downloads
+      - ./config:/home/qbittorrent/.config/qBittorrent
+      - ./data:/home/qbittorrent/.local/share/qBittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
+

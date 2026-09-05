@@ -1249,11 +1249,10 @@ window.addEventListener("DOMContentLoaded", async (event) => {
 
             const ensureSpan = (className) => {
                 let span = externalIPsElement.querySelector(`.${className}`);
-                let isNew = false;
-                if (!span) {
+                const isNew = span === null;
+                if (isNew) {
                     span = document.createElement("span");
                     span.classList.add(className);
-                    isNew = true;
                 }
                 return { span, isNew };
             };
